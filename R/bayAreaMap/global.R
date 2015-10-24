@@ -1,5 +1,6 @@
 library(dplyr)
-setwd('~/chandyman/Dropbox/shiny-examples/063-superzip-example/')
+
+# setwd('~/workspace/berc-cleanweb-hackathon/R/bayAreaMap/')
 
 #solarData <- read.csv('data/solarhouses_byzip_2050.csv', stringsAsFactors=F)
 #solarData$zipcode <- formatC(solarData$ZIP, width=5, format="d", flag="0")
@@ -33,6 +34,7 @@ subsetted <- subset(solarDataLatLng,
   lat >= latRng[1] & lat <= latRng[2] &
   lng >= lngRng[1] & lng <= lngRng[2])
 
+#write.table(subsetted, file='data/bayarea.csv', sep=',', row.names=F)
 subsetted <- subsetted[sample.int(nrow(subsetted), 100000),]
 
 # allzips$latitude <- jitter(allzips$latitude)
