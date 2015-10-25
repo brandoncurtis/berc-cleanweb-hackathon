@@ -35,19 +35,17 @@ library(dplyr)
 
 #solarDataLatLngFromUltrix <- read.csv('data/bayarea_update.csv', stringsAsFactors=F)
 #saveRDS(solarDataLatLngFromUltrix, 'data/bayarea_update.rds')
-solarDataLatLng <- readRDS('data/bayarea_update.rds')
+#solarDataLatLng <- readRDS('data/bayarea_update.rds')
 #lngRng = c( -122.8, -121.6)
 #latRng = c( 37.2, 37.9)
 
-#solarDataLatLngFromUltrix <- read.csv('data/bayarea_update.csv', stringsAsFactors=F)
-#saveRDS(solarDataLatLngFromUltrix, 'data/bayarea_update.rds')
-#solarDataLatLng <- readRDS('data/bayarea_update.rds')
-
-# subsetted <- subset(solarDataLatLng,
-#   lat >= latRng[1] & lat <= latRng[2] &
-#   lng >= lngRng[1] & lng <= lngRng[2])
+#solarDataLatLngFromUltrix <- read.csv('data/allus_update.csv', stringsAsFactors=F)
+#saveRDS(solarDataLatLngFromUltrix, 'data/allus_update.rds')
+solarDataLatLngFromUltrix <- readRDS('data/allus_update.rds') %>%
+  select(zipcode, Lat_2, Long_2) %>%
+  rename(lat = Lat_2, lng=Long_2)
 
 #write.table(subsetted, file='data/bayarea.csv', sep=',', row.names=F)
 # subsetted <- subsetted[sample.int(nrow(subsetted), 100000),]
 
-subsetted <- solarDataLatLngFromUltrix %>% rename(lat = Lat_2, lng=Long_2)
+#subsetted <- solarDataLatLngFromUltrix %>% rename(lat = Lat_2, lng=Long_2)
