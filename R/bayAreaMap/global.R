@@ -45,7 +45,4 @@ solarDataLatLngFromUltrix <- readRDS('data/allus_update.rds') %>%
   select(zipcode, Lat_2, Long_2) %>%
   rename(lat = Lat_2, lng=Long_2)
 
-#write.table(subsetted, file='data/bayarea.csv', sep=',', row.names=F)
-# subsetted <- subsetted[sample.int(nrow(subsetted), 100000),]
-
 #subsetted <- solarDataLatLngFromUltrix %>% rename(lat = Lat_2, lng=Long_2)
