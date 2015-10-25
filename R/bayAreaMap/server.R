@@ -26,7 +26,8 @@ shinyServer(function(input, output, session) {
   output$map <- renderLeaflet({
     leaflet() %>%
       addProviderTiles("Stamen.TerrainBackground") %>%
-      fitBounds(lat1 = 37.2, lng2 = -121.6, lng1 = -122.8, lat2 = 37.9)
+      setView(lng = -93.85, lat = 37.45, zoom = 4)
+#      fitBounds(lat1 = 37.2, lng2 = -121.6, lng1 = -122.8, lat2 = 37.9)
   })
 
   # A reactive expression that returns the set of zips that are
