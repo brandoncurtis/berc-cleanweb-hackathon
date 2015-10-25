@@ -13,6 +13,8 @@ library(dplyr)
 # allzips$zipcode <- formatC(allzips$zipcode, width=5, format="d", flag="0")
 # allzips <- allzips[c('zipcode', 'latitude', 'longitude')]
 # 
+ 
+# join solar data to zip clode data and add jitter
 #  solarDataLatLng <- solarData %>%
 #    select(zipcode, Solar.Houses) %>%
 #    left_join(allzips) %>%
@@ -25,16 +27,21 @@ library(dplyr)
 #    mutate( lng = jitter(ziplng, amount=.01))
 
 #saveRDS(solarDataLatLng, file = 'data/solarLatLng.rds')
-solarDataLatLng <- readRDS('data/solarLatLng.rds')
+#solarDataLatLng <- readRDS('data/solarLatLng.rds')
 #solarDataLatLngNarrow = solarDataLatLng %>%
 #  select( zipcode, nrows)
-#write.table(solarDataLatLng, file='data/allOfAmericaNarrow.csv', row.names=F)
+#write.table(solarDataLatLngNarrow, file='data/allOfAmericaNarrow.csv', row.names=F,
+# sep = ",")
+
+#solarDataLatLngFromUltrix <- read.csv('data/bayarea_update.csv', stringsAsFactors=F)
+#saveRDS(solarDataLatLngFromUltrix, 'data/bayarea_update.rds')
+solarDataLatLng <- readRDS('data/bayarea_update.rds')
+#lngRng = c( -122.8, -121.6)
+#latRng = c( 37.2, 37.9)
 
 #solarDataLatLngFromUltrix <- read.csv('data/bayarea_update.csv', stringsAsFactors=F)
 #saveRDS(solarDataLatLngFromUltrix, 'data/bayarea_update.rds')
 #solarDataLatLng <- readRDS('data/bayarea_update.rds')
-#lngRng = c( -122.8, -121.6)
-#latRng = c( 37.2, 37.9)
 
 # subsetted <- subset(solarDataLatLng,
 #   lat >= latRng[1] & lat <= latRng[2] &
@@ -43,4 +50,4 @@ solarDataLatLng <- readRDS('data/solarLatLng.rds')
 #write.table(subsetted, file='data/bayarea.csv', sep=',', row.names=F)
 # subsetted <- subsetted[sample.int(nrow(subsetted), 100000),]
 
-#subsetted <- solarDataLatLngFromUltrix %>% rename(lat = Lat_2, lng=Long_2)
+subsetted <- solarDataLatLngFromUltrix %>% rename(lat = Lat_2, lng=Long_2)

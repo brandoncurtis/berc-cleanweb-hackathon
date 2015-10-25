@@ -45,10 +45,10 @@ shinyServer(function(input, output, session) {
     latRng <- range(bounds$north, bounds$south)
     lngRng <- range(bounds$east, bounds$west)
 
-     subsetted <- subset(solarDataLatLng,
-       lat >= latRng[1] & lat <= latRng[2] &
-         lng >= lngRng[1] & lng <= lngRng[2])
-    
+#      subsetted <- subset(solarDataLatLng,
+#        lat >= latRng[1] & lat <= latRng[2] &
+#          lng >= lngRng[1] & lng <= lngRng[2])
+#     
 #      expanded <- subsetted %>%
 #        group_by(zipcode) %>%
 #        do(data.frame( ziplat=.$latitude, ziplng=.$longitude,
