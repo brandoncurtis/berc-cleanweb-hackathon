@@ -18,3 +18,10 @@ Find us on Github: https://github.com/brandoncurtis/berc-cleanweb-hackathon/
 ## Presentation
 
 + Google Drive: https://goo.gl/otxBBN
+
+
+## Try It Out
+
+https://berc-hackathon.shinyapps.io/bayAreaMap/
+
+(This worked fine at the time, but shinyapps has gone a bit crusty)
